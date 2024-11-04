@@ -1,0 +1,10 @@
+#!/bin/bash
+
+output_path="."
+while getopts o: opts; do
+   case ${opts} in
+      o) output_path=${OPTARG} ;;
+   esac
+done
+
+tar --extract --file arch1.tar -z -C "${output_path}"
