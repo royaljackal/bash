@@ -42,5 +42,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 sudo docker run -d --name jmix-bookstore -p 8080:8080 jmix/jmix-bookstore
-docker run -d --name jmix-bookstore -p 8080:8080 jmix/jmix-bookstore
 EOF
+
+echo "ssh -i $SSH_KEY_PATH yc-user@$VM_IP"
+echo "http://$VM_IP:8080"
